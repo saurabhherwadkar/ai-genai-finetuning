@@ -1,0 +1,52 @@
+app:
+  name: "ai-genai-finetuning"
+  version: "1.0.0"
+
+training:
+  base_model: "meta-llama/Llama-3.1-8B-Instruct"
+  output_dir: "outputs"
+  num_epochs: 3
+  batch_size: 4
+  learning_rate: 0.0002
+  max_seq_length: 2048
+  gradient_accumulation_steps: 4
+  warmup_ratio: 0.03
+  weight_decay: 0.001
+  fp16: true
+  logging_steps: 10
+  save_steps: 100
+
+lora:
+  rank: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+qlora:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_use_double_quant: true
+
+dpo:
+  beta: 0.1
+  learning_rate: 0.00005
+  max_prompt_length: 512
+  max_length: 1024
+
+evaluation:
+  metrics: ["accuracy", "f1", "bleu", "rouge"]
+  test_split_ratio: 0.1
+  num_samples: 100
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: false
+
+logging:
+  level: "INFO"
+  format: "json"
+  file: "logs/app.log"

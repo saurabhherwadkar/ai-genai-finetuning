@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.idea/
+.vscode/
+.env
+.env.local
+htmlcov/
+.coverage
+logs/*.log
+.DS_Store
+Thumbs.db
+tmp/
+# Model artifacts
+models/
+checkpoints/
+outputs/
+*.bin
+*.safetensors
+*.gguf
+wandb/
