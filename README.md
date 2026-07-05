@@ -2,7 +2,7 @@
 
 LLM fine-tuning framework with LoRA, QLoRA, DPO, dataset preparation, evaluation benchmarks, and adapter management.
 
-## Key Learning Objectives
+## Objectives
 
 - Understand the end-to-end workflow of fine-tuning large language models from dataset preparation through deployment
 - Apply Low-Rank Adaptation (LoRA) to efficiently train adapter layers on top of frozen pretrained models
