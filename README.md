@@ -2,6 +2,19 @@
 
 LLM fine-tuning framework with LoRA, QLoRA, DPO, dataset preparation, evaluation benchmarks, and adapter management.
 
+## Key Learning Objectives
+
+- Understand the end-to-end workflow of fine-tuning large language models from dataset preparation through deployment
+- Apply Low-Rank Adaptation (LoRA) to efficiently train adapter layers on top of frozen pretrained models
+- Use QLoRA with 4-bit quantization to fine-tune large models on consumer-grade hardware with limited VRAM
+- Implement Direct Preference Optimization (DPO) for aligning model outputs with human preferences without a separate reward model
+- Design and validate fine-tuning datasets including instruction, chat, and preference pair formats with proper train/test splits
+- Evaluate fine-tuned models using standardized benchmarks including accuracy, F1 score, and BLEU metrics
+- Manage the adapter lifecycle including listing, inspecting, merging adapters into base models, and versioning
+- Compare fine-tuning versus retrieval-augmented generation (RAG) approaches to determine the optimal strategy for a given use case
+- Build a production-ready REST API for orchestrating fine-tuning jobs, running evaluations, and serving adapter metadata
+- Deploy fine-tuned models using containerized environments with GPU support via Docker and docker-compose
+
 ## Table of Contents
 
 1. [Overview](#overview)
